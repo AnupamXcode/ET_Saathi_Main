@@ -19,7 +19,8 @@ export class ApiClient {
     options: RequestInit = {}
   ): Promise<ApiResponse<T>> {
     try {
-      const url = `${API_BASE_URL}/api${endpoint}`
+      // Use relative path to avoid host mismatch issues in deployment
+      const url = `/api${endpoint}`
       const response = await fetch(url, {
         ...options,
         headers: {

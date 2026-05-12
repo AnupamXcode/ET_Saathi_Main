@@ -4,7 +4,8 @@ let genAI: GoogleGenerativeAI | null = null
 
 function getGenAI() {
   if (!genAI) {
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY
+    // Prefer server-side secret, fallback to public for client-side use
+    const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY
 
     if (!apiKey) {
       throw new Error('Missing Gemini API key')
