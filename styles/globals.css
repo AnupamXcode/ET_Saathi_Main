@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-white font-sans;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+button {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Custom utilities */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.glass-hover {
+  @apply glass hover:bg-white/10 cursor-pointer transition-all;
+}
+
+.gradient-gold {
+  @apply bg-gradient-to-r from-gold to-darkgold bg-clip-text text-transparent;
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg bg-gradient-to-r from-gold to-darkgold text-black font-semibold hover:shadow-lg transition-all;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg border border-gold text-gold hover:bg-gold/10 transition-all;
+}
+
+.card {
+  @apply glass rounded-xl p-6;
+}
+
+.card-hover {
+  @apply card hover:bg-white/10 hover:border-gold/50 transition-all cursor-pointer;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:border-gold focus:outline-none transition-all;
+}
+
+.badge-success {
+  @apply inline-block px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-semibold;
+}
+
+.badge-warning {
+  @apply inline-block px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-semibold;
+}
+
+.badge-danger {
+  @apply inline-block px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-semibold;
+}
+
+.skeleton {
+  @apply bg-white/5 rounded-lg animate-pulse;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.5);
+}
