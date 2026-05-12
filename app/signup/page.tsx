@@ -45,7 +45,8 @@ export default function SignupPage() {
           router.push('/dashboard')
         }, 2000)
       } else {
-        setError(result.error instanceof Error ? result.error.message : 'Signup failed')
+        const error = 'error' in result ? result.error : 'Signup failed'
+        setError(error instanceof Error ? error.message : String(error))
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')

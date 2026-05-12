@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/index'
 import { apiClient } from '@/lib/api-client'
 import { ScenarioResult } from '@/types'
 import { motion } from 'framer-motion'
-import { Loader2, GitBranch, AlertCircle, TrendingUp, TrendingDown } from 'lucide-react'
+import { Loader2, GitBranch, AlertCircle } from 'lucide-react'
 
 export default function ScenariosPage() {
   const [description, setDescription] = useState('')
@@ -179,7 +179,7 @@ export default function ScenariosPage() {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {sector.affected_companies.map((company, i) => (
-                        <Badge key={i} variant="secondary">
+                        <Badge key={i} variant="default">
                           {company}
                         </Badge>
                       ))}

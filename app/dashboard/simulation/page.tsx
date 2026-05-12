@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/index'
 import { motion } from 'framer-motion'
-import { Loader2, BarChart3, AlertCircle, TrendingUp } from 'lucide-react'
+import { Loader2, BarChart3, AlertCircle } from 'lucide-react'
 
 interface SimulationResult {
   final_value: number

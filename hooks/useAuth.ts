@@ -3,14 +3,14 @@
 import { useEffect, useState, useCallback } from 'react'
 import { getSupabase } from '@/lib/supabase'
 import { User } from '@/types'
-import type { AuthChangeEvent, Session } from '@supabase/supabase-js'
 
 export function useAuth() {
   const [user, setUser] = useState<User | null>({
     id: 'demo-user',
     email: 'demo@example.com',
     name: 'Demo User',
-    created_at: new Date().toISOString()
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -47,12 +47,13 @@ export function useAuth() {
   )
 
   const signIn = useCallback(
-    async (email: string, password: string) => {
+    async (email: string, _password: string) => {
       setUser({
         id: 'demo-user',
         email,
         name: 'Demo User',
-        created_at: new Date().toISOString()
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
       })
       return { success: true, user: { id: 'demo-user', email } }
     },

@@ -158,22 +158,22 @@ export default function HistoryPage() {
 
                     {/* Metadata Badge */}
                     <div className="flex-shrink-0">
-                      {('sentiment' in activity) && (
+                      {('sentiment' in activity) && activity.sentiment && (
                         <Badge variant={getMetadataColor('sentiment', activity.sentiment)}>
                           {activity.sentiment.toUpperCase()}
                         </Badge>
                       )}
-                      {('recommendation' in activity) && (
+                      {('recommendation' in activity) && activity.recommendation && (
                         <Badge variant={getMetadataColor('recommendation', activity.recommendation)}>
                           {activity.recommendation.toUpperCase()}
                         </Badge>
                       )}
-                      {('risk' in activity) && (
+                      {('risk' in activity) && activity.risk && (
                         <Badge variant={getMetadataColor('risk', activity.risk)}>
                           {activity.risk.toUpperCase()} RISK
                         </Badge>
                       )}
-                      {('return' in activity) && (
+                      {('return' in activity) && activity.return && (
                         <Badge variant={activity.return.includes('+') ? 'success' : 'danger'}>
                           {activity.return}
                         </Badge>

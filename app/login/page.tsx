@@ -28,7 +28,8 @@ export default function LoginPage() {
       if (result.success) {
         router.push('/dashboard')
       } else {
-        setError(result.error instanceof Error ? result.error.message : 'Login failed')
+        const error = 'error' in result ? result.error : 'Login failed'
+        setError(error instanceof Error ? error.message : String(error))
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')
